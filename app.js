@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const app = express();
+const party = require('./routes/party');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,6 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/static', express.static(path.join(__dirname, 'public')));
+
+app.use('/party', party);
 
 /*
 Schem
