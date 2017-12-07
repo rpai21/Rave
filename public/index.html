@@ -5,7 +5,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Material Design Bootstrap</title>
+		<!-- <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="312765926692-ghi2rf2v4j5vr2hckqiophne7qtrmug3.apps.googleusercontent.com"> -->
+		<title>RAVE</title>
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- Bootstrap core CSS -->
@@ -14,6 +16,7 @@
 		<link href="css/mdb.min.css" rel="stylesheet">
 		<!-- Your custom styles (optional) -->
 		<link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -72,11 +75,11 @@
 				<form class="form-inline">
 					<input class="form-control w-100" type="text" placeholder="Search" aria-label="Search">
 				</form>
-				
+
 				<button type="button" class="btn btn-primary">Search</button>
-				
+
 			<br>
-			<br>  
+			<br>
 			<!--Panel-->
 			<div class="card card-body">
 			    <h4 class="card-title">506 Banger</h4>
@@ -86,13 +89,49 @@
 			        <a class="card-link">Like</a>
 			    </div>
 			</div>
+			<!-- <div class="g-signin2" onclick="signIn()"></div> -->
+			<button type = "button" class="btn btn-primary" onclick="signIn();">Sign In with Google</button>
 			<!--/.Panel-->
-                
-		</div>
-		
-								
-		<!-- /Start your project here-->
 
+		</div>
+
+
+		<!-- /Start your project here-->
+		<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+		<script>
+		var config = {
+		    apiKey: "AIzaSyBRn4ZIuIuyidDier1ytrH23swIz4-djnM",
+		    authDomain: "cs-252-rave.firebaseapp.com",
+		    databaseURL: "https://cs-252-rave.firebaseio.com",
+		    projectId: "cs-252-rave",
+		    storageBucket: "cs-252-rave.appspot.com",
+		    messagingSenderId: "312765926692"
+		  };
+		firebase.initializeApp(config);
+
+		</script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script>
+		var provider = new firebase.auth.GoogleAuthProvider();
+		function signIn(){
+			firebase.auth().signInWithPopup(provider).then(function(result) {
+	  // This gives you a Google Access Token. You can use it to access the Google API.
+	  var token = result.credential.accessToken;
+	  // The signed-in user info.
+	  var user = result.user;
+	  // ...
+	}).catch(function(error) {
+	  // Handle Errors here.
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+	  // The email of the user's account used.
+	  var email = error.email;
+	  // The firebase.auth.AuthCredential type that was used.
+	  var credential = error.credential;
+	  // ...
+	});
+		}
+		</script>
 		<!-- SCRIPTS -->
 		<!-- JQuery -->
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>

@@ -10,8 +10,22 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "express": "~4.14.0",
+    "firebase": "^4.7.0",
     "hbs": "~4.0.1",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0"
-  }
+  },
+  "description": "Party Reviewer, Rater, and Finder for Purdue students",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpai21/Rave.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rpai21/Rave/issues"
+  },
+  "homepage": "https://github.com/rpai21/Rave#readme"
 }
