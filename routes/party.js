@@ -8,7 +8,7 @@ const auth = require('./auth.js');
 
 // define the home page route
 router.get('/getParties', auth.authenticated,function(req, res) {
-	Party.find({}, (err, data)=>{
+	Party.find({}).populate('owner').exec((err, data)=>{
 		res.send(data);
 	});
 });
@@ -17,11 +17,16 @@ router.post('/createParty', auth.authenticated, function(req, res) {
 	new Party({
 		name: req.body.name,
 		owner: req.user._id,
-		description: req.body.name,
-		drinks: req.body.name,
+		description: req.body.description,
+		alc: req.body.alc,
 		pay: req.body.pay,
-		date: new Date(req.body.date),
-		going: [req.user._id]
+		age: req.body.age,
+		startDate: new Date(req.body.startDate),
+		endDate: new Date(req.body.endDate),
+		startTime: req.body.startTime,
+		endTime: req.body.endTime,
+		going: [req.user._id],
+		count: 1
 	}).save((err) => {
 		if (err) throw err;
 		res.send({message: "Success"});

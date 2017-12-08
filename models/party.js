@@ -6,10 +6,15 @@ let party = new Schema({
   owner: { type: Schema.Types.ObjectId, ref: 'User' },
   description: String,
   going: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-  drinks: Boolean,
+  alc: Boolean,
   pay: Boolean,
-  date: Date,
-  drinks: Boolean
+  startDate: Date,
+  endDate: Date,
+  startTime: String,
+  endTime: String,
+  alc: Boolean,
+  age: Boolean,
+  count: Number
 });
 let partyModel = mongoose.model('Party', party);
 
