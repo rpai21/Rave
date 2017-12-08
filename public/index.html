@@ -30,66 +30,7 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 						aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
-				<!-- Collapsible content -->
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-						<!-- Links -->
-						<ul class="navbar-nav mr-auto">
-								<li class="nav-item">
-										<a class="nav-link" href="post-form.html">Post Party<span class="sr-only">(current)</span></a>
-								</li>
-								<li class="nav-item">
-										<a class="nav-link" href="index.html">Find Party</a>
-								</li>
-								<!-- <li class="nav-item">
-										<a class="nav-link" href="#">Pricing</a>
-								</li> -->
-
-								<!-- Dropdown -->
-<!-- 								<li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-										<div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-												<a class="dropdown-item" href="#">Action</a>
-												<a class="dropdown-item" href="#">Another action</a>
-												<a class="dropdown-item" href="#">Something else here</a>
-										</div>
-								</li> -->
-
-						</ul>
-						<!-- Links -->
-
-						<!-- Search form -->
-<!-- 						<form class="form-inline">
-								<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-						</form> -->
-
-						<form class="form-inline">
-
-					    <div class="md-form">
-					        <i class="fa fa-envelope prefix"></i>
-					        <input type="email" id="form91" class="form-control validate">
-					        <label for="form91" data-error="wrong" data-success="right">Type your email</label>
-					    </div>
-
-					    <div class="md-form">
-					        <i class="fa fa-lock prefix"></i>
-					        <input type="password" id="form92" class="form-control validate">
-					        <label for="form92" data-error="wrong" data-success="right">Type your password</label>
-					    </div>
-
-					    <div class="md-form form-group">
-					        <a class="btn btn-primary btn-lg" id = "test" onclick="myFunction()">Login</a>
-					    </div>
-
-					    <script>
-						function myFunction() {
-							console.log($('#form91').val());
-						    console.log($('#form92').val());
-						}
-						</script>
-
-						</form>
-				</div>
+				
 				<!-- Collapsible content -->
 
 		</nav>
@@ -98,96 +39,159 @@
 
 
 		<div class="container">
-			<br>
-			<!-- Search form -->
-				<form class="form-inline">
-					<input class="form-control w-100" type="text" placeholder="Search" aria-label="Search">
-				</form>
+		
+			<br></br>
 
-				<button type="button" class="btn btn-primary">Search</button>
+						<!--News card-->
+			<div class="card border-primary mb-3 text-center hoverable">
+			    <div class="card-body">
+			        <!--Grid row-->
+			        <div class="row">
+
+			            <!--Grid column-->
+			            <div class="col-md-4 offset-md-1 mx-3 my-3">
+			                <!--Featured image-->
+			                <div class="view overlay hm-white-slight">
+			                    <img src="/static/img/party.jpg" class="img-fluid">
+			                    <a>
+			                        <div class="mask"></div>
+			                    </a>
+			                </div>
+			            </div>
+			            <!--Grid column-->
+
+			            <!--Grid column-->
+			            <div class="col-md-7 text-left ml-3 mt-3">
 
 
-		<br></br>
+			                <!--Excerpt-->
 
-					<!--News card-->
-		<div class="card border-primary mb-3 text-center hoverable">
-		    <div class="card-body">
-		        <!--Grid row-->
-		        <div class="row">
 
-		            <!--Grid column-->
-		            <div class="col-md-4 offset-md-1 mx-3 my-3">
-		                <!--Featured image-->
-		                <div class="view overlay hm-white-slight">
-		                    <blockquote class="imgur-embed-pub" lang="en" data-id="a/9MPIu"><a href="//imgur.com/9MPIu"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-		                    <a>
-		                        <div class="mask"></div>
-		                    </a>
+			                <h4 class="mb-4"><strong>Beta Chi Banger</strong></h4>
+			                <p>Back To Scool Party! Come back to school and kick it off with a bang. Join us this Spring 2018 Syllabooz week. </p>
+
+			                <p>by <a><strong>Sanjit Sama</strong></a>, 1/15/18</p>
+
+						   <div class="row">
+			                &nbsp;
+			                &nbsp;
+			                &nbsp;
+			                <a href="" class="green-text">
+			                    <h6 class="font-bold pb-1"><i class="fa fa-money"></i> Cost</h6>
+			                </a>
+			                &nbsp;
+			                &nbsp;
+			                &nbsp;
+			                <a href="" class="green-text">
+			                    <h6 class="font-bold pb-1"><i class="fa fa-glass"></i> Provided</h6>
+			                </a>
+			                &nbsp;
+			                &nbsp;
+			                &nbsp;
+			                <a href="" class="green-text">
+			                    <h6 class="font-bold pb-1"><i class="fa fa-users"></i> Seniors Only</h6>
+			                </a>
+			                &nbsp;
+			                &nbsp;
+			                &nbsp;
+			            	</div>
+
+			            	<br>
+			            	</br>
+			                <a class="btn btn-success">Going</a>
+			            </div>
+			            <!--Grid column-->
+			        </div>
+			        <!--Grid row-->
+			    </div>
+			</div>
+			<!--News card-->
+		</div>
+
+		<div class="modal fade" id="partyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header text-center">
+		                <h4 class="modal-title w-100 font-bold">Create a party</h4>
+		                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                    <span aria-hidden="true">&times;</span>
+		                </button>
+		            </div>
+		            <div class="modal-body mx-3">
+		                <div class="md-form">
+		                    <i class="fa fa-user prefix grey-text"></i>
+		                    <input type="text" id="form3" class="form-control validate">
+		                    <label data-error="wrong" data-success="right" for="form3">Title</label>
 		                </div>
+
+		                <div class="md-form">
+		                    <i class="fa fa-pencil prefix grey-text"></i>
+		                    <textarea type="text" id="form8" class="md-textarea" style="height: 100px"></textarea>
+		                    <label data-error="wrong" data-success="right" for="form8">Description</label>
+		                </div>
+
+		                 <div class="row d-flex justify-content-center align-items-center">
+		                 	 <div class="md-form">
+						    <input placeholder="Selected date" type="text" id="date2" class="form-control datepicker">
+						    <label for="date2">Start Date</label>
+						</div>
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						<div class="md-form">
+						    <input placeholder="Selected time" type="text" id="time2" class="form-control timepicker">
+						    <label for="time2">Start Time</label>
+						</div>
+			                
+			            </div>
+
+			            <div class="row d-flex justify-content-center align-items-center">
+		                 	 <div class="md-form">
+						    <input placeholder="Selected date" type="text" id="date1" class="form-control datepicker">
+						    <label for="date1">Start Date</label>
+						</div>
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						<div class="md-form">
+						    <input placeholder="Selected time" type="text" id="time1" class="form-control timepicker">
+						    <label for="time1">Start Time</label>
+						</div>
+			                
+			            </div>
+		               
+						
+		                <div class="form-group">
+						    <input type="checkbox" id="checkbox1">
+						    <label for="checkbox1">Paid</label>
+						</div>
+
+						<div class="form-group">
+						    <input type="checkbox" id="checkbox2">
+						    <label for="checkbox2">Alcohol</label>
+						</div>
+
+						<div class="form-group">
+						    <input type="checkbox" id="checkbox3">
+						    <label for="checkbox3">21+</label>
+						</div>
+
 		            </div>
-		            <!--Grid column-->
-
-		            <!--Grid column-->
-		            <div class="col-md-7 text-left ml-3 mt-3">
-
-
-		                <!--Excerpt-->
-
-
-		                <h4 class="mb-4"><strong>Beta Chi Banger</strong></h4>
-		                <p>Back To Scool Party! Come back to school and kick it off with a bang. Join us this Spring 2018 Syllabooz week. </p>
-
-		                <p>by <a><strong>Sanjit Sama</strong></a>, 1/15/18</p>
-
-					   <div class="row">
-		                &nbsp;
-		                &nbsp;
-		                &nbsp;
-		                <a href="" class="green-text">
-		                    <h6 class="font-bold pb-1"><i class="fa fa-money"></i> Cost</h6>
-		                </a>
-		                &nbsp;
-		                &nbsp;
-		                &nbsp;
-		                <a href="" class="green-text">
-		                    <h6 class="font-bold pb-1"><i class="fa fa-glass"></i> Provided</h6>
-		                </a>
-		                &nbsp;
-		                &nbsp;
-		                &nbsp;
-		                <a href="" class="green-text">
-		                    <h6 class="font-bold pb-1"><i class="fa fa-calendar"></i> Date</h6>
-		                </a>
-		                &nbsp;
-		                &nbsp;
-		                &nbsp;
-		                <a href="" class="green-text">
-		                    <h6 class="font-bold pb-1"><i class="fa fa-users"></i> Seniors Only</h6>
-		                </a>
-		                &nbsp;
-		                &nbsp;
-		                &nbsp;
-		            	</div>
-
-		            	<br>
-		            	</br>
-		                <a class="btn btn-success">Going</a>
-
-
-
+		            <div class="modal-footer d-flex justify-content-center">
+		                <button class="btn btn-primary">Send <i class="fa fa-paper-plane-o ml-1"></i></button>
 		            </div>
-		            <!--Grid column-->
 		        </div>
-		        <!--Grid row-->
 		    </div>
 		</div>
-		<!--News card-->
 
-
-
+		
+		<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+		    <a id="createParty" class="btn-floating btn-lg danger-color">
+		        <i class="fa fa-plus"></i>
+		    </a>
 		</div>
-
-
 		<!-- /Start your project here-->
 		
 		<!-- SCRIPTS -->
@@ -199,6 +203,20 @@
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<!-- MDB core JavaScript -->
 		<script type="text/javascript" src="js/mdb.min.js"></script>
+
+		<script type="text/javascript">
+			$('#createParty').click(()=>{
+				$('#partyModal').modal();
+			});
+			$('#time1').pickatime({
+			    twelvehour: true
+			});
+			$('#time2').pickatime({
+			    twelvehour: true
+			});
+			$('.datepicker').pickadate();
+
+		</script>
 </body>
 
 </html>
