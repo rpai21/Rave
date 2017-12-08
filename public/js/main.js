@@ -81,6 +81,19 @@ function appendParty(obj){
 		button = `<a class="btn btn-primary" href="/party/${obj._id}/going">RSVP</a>`;
 	}
 
+	let liked = false;
+	for(let j = 0; j < obj.up.length; j++){
+		if(uid === obj.up[j]._id){
+			liked = true;
+		}
+	}
+	let likebutton;
+	if(liked){
+		likebutton = `<a class="btn btn-yellow" href="/party/${obj._id}/up">Like</a>`;
+	}else{
+		likebutton = `<a class="btn btn-blue-grey" href="/party/${obj._id}/up">Like</a>`;
+	}
+
 	let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 	let temp = `
@@ -118,10 +131,13 @@ function appendParty(obj){
 			                <p><small>by <strong>${obj.owner.username}</strong></small></p>
 
 							<p><strong>${obj.count}</strong> People Going</p>
+							<p><strong>${obj.upCount}</strong> Likes</p>
 						   ${badges}
 
 			            	<br>
 			                ${button}
+			                ${likebutton}
+			                
 			            </div>
 			            <!--Grid column-->
 			        </div>

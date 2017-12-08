@@ -14,7 +14,11 @@ let party = new Schema({
   endTime: String,
   alc: Boolean,
   age: Boolean,
-  count: Number
+  count: Number,
+  up: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+  upCount: Number,
+  down: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+  downCount: Number
 });
 let partyModel = mongoose.model('Party', party);
 
