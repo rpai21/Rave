@@ -43,6 +43,83 @@
 			<i class="fa fa-plus"></i>
 			</a>
 		</div>
+
+		<div class="modal fade" id="partyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header text-center">
+		                <h4 class="modal-title w-100 font-bold">Create a party</h4>
+		                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                    <span aria-hidden="true">&times;</span>
+		                </button>
+		            </div>
+		            <div class="modal-body mx-3">
+		                <div class="md-form">
+		                    <input type="text" id="form3" class="form-control validate">
+		                    <label data-error="wrong" data-success="right" for="form3">Title</label>
+		                </div>
+
+		                <div class="md-form">
+		                    <textarea type="text" id="form8" class="md-textarea" style="height: 100px"></textarea>
+		                    <label data-error="wrong" data-success="right" for="form8">Description</label>
+		                </div>
+
+		                 <div class="row d-flex justify-content-center align-items-center">
+		                 	 <div class="md-form">
+						    <input placeholder="Selected date" type="text" id="date2" class="form-control datepicker">
+						    <label for="date2">Start Date</label>
+						</div>
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						<div class="md-form">
+						    <input placeholder="Selected time" type="text" id="time2" class="form-control timepicker">
+						    <label for="time2">Start Time</label>
+						</div>
+			                
+			            </div>
+
+			            <div class="row d-flex justify-content-center align-items-center">
+		                 	 <div class="md-form">
+						    <input placeholder="Selected date" type="text" id="date1" class="form-control datepicker">
+						    <label for="date1">Start Date</label>
+						</div>
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						<div class="md-form">
+						    <input placeholder="Selected time" type="text" id="time1" class="form-control timepicker">
+						    <label for="time1">Start Time</label>
+						</div>
+			                
+			            </div>
+		               
+						
+		                <div class="form-group">
+						    <input type="checkbox" id="checkbox1">
+						    <label for="checkbox1">Paid</label>
+						</div>
+
+						<div class="form-group">
+						    <input type="checkbox" id="checkbox2">
+						    <label for="checkbox2">Alcohol</label>
+						</div>
+
+						<div class="form-group">
+						    <input type="checkbox" id="checkbox3">
+						    <label for="checkbox3">21+</label>
+						</div>
+
+		            </div>
+		            <div class="modal-footer d-flex justify-content-center">
+		                <button id="createPartyButton" class="btn btn-primary">Create <i class="fa fa-paper-plane-o ml-1"></i></button>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
 		<!-- /Start your project here-->
 		<!-- SCRIPTS -->
 		<!-- JQuery -->
