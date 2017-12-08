@@ -71,7 +71,7 @@ app.get('/',  auth.authenticated, (req, res)=>{
 });
 
 app.get('/login', (req, res)=>{
-	res.send("Please go login");
+	res.sendFile(path.join(__dirname, 'public/main.html'));
 });
 
 app.post('/login', auth.login);

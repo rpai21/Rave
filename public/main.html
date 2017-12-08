@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Find Your Rave!</title>
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Bootstrap core CSS -->
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Material Design Bootstrap -->
+		<link href="/static/css/mdb.min.css" rel="stylesheet">
+		<!-- Your custom styles (optional) -->
+		<link href="/static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+		<!-- Start your project here-->
+		<div class="container">
+		<!-- Form login -->
+<div id="example1&quot;" style="height: 100vh">
+
+
+
+
+
+        <div class="flex-center flex-column">
+
+
+
+            <h1 class="animated fadeIn mb-4">R A V E</h1>
+
+
+
+            <h5 class="animated fadeIn mb-3">"Never miss a party...good for the nerves--like celery" - F. Scott Fitzgerald</h5>
+
+
+
+            <p class="animated fadeIn text-muted">CS252</p>
+
+            <br>
+
+            <button id="loginButton" type="button" class="btn btn-primary btn-rounded">it's time</button>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+               
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-bold">Sign in</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="email" id="defaultForm-email" class="form-control">
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">Your username</label>
+                </div>
+                <br>
+                <div class="md-form">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <input type="password" id="defaultForm-pass" class="form-control">
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button id="go" class="btn btn-primary btn-rounded">Let's Party</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+		<!-- /Start your project here-->
+		
+		<!-- SCRIPTS -->
+		<!-- JQuery -->
+		<script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+		<!-- Bootstrap tooltips -->
+		<script type="text/javascript" src="/static/js/popper.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+		<!-- MDB core JavaScript -->
+		<script type="text/javascript" src="/static/js/mdb.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(() =>{
+				$('#loginButton').click(()=>{
+					$('#modalLoginForm').modal();
+				});
+
+			
+				$('#go').click(()=>{
+					console.log("click");
+					$.ajax({
+					  type: "POST",
+					  url: "/login",
+					  data: JSON.stringify({
+					  	username: $('#defaultForm-email').val(),
+					  	password: $('#defaultForm-pass').val()
+					  }),
+					  contentType: "application/json",
+					  success: function(){
+	                        window.location.href = "/";
+	                    },
+	                  error: function(){
+	                  	toastr.error('Login failed');
+	                  }
+					});
+				});
+			});
+			
+		</script>
+</body>
+
+</html>
