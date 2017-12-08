@@ -39,28 +39,55 @@
 										<a class="nav-link" href="post-form.html">Post Party<span class="sr-only">(current)</span></a>
 								</li>
 								<li class="nav-item">
-										<a class="nav-link" href="#">Features</a>
+										<a class="nav-link" href="index.html">Find Party</a>
 								</li>
-								<li class="nav-item">
+								<!-- <li class="nav-item">
 										<a class="nav-link" href="#">Pricing</a>
-								</li>
+								</li> -->
 
 								<!-- Dropdown -->
-								<li class="nav-item dropdown">
+<!-- 								<li class="nav-item dropdown">
 										<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
 										<div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
 												<a class="dropdown-item" href="#">Action</a>
 												<a class="dropdown-item" href="#">Another action</a>
 												<a class="dropdown-item" href="#">Something else here</a>
 										</div>
-								</li>
+								</li> -->
 
 						</ul>
 						<!-- Links -->
 
 						<!-- Search form -->
-						<form class="form-inline">
+<!-- 						<form class="form-inline">
 								<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+						</form> -->
+
+						<form class="form-inline">
+
+					    <div class="md-form">
+					        <i class="fa fa-envelope prefix"></i>
+					        <input type="email" id="form91" class="form-control validate">
+					        <label for="form91" data-error="wrong" data-success="right">Type your email</label>
+					    </div>
+
+					    <div class="md-form">
+					        <i class="fa fa-lock prefix"></i>
+					        <input type="password" id="form92" class="form-control validate">
+					        <label for="form92" data-error="wrong" data-success="right">Type your password</label>
+					    </div>
+
+					    <div class="md-form form-group">
+					        <a class="btn btn-primary btn-lg" id = "test" onclick="myFunction()">Login</a>
+					    </div>
+
+					    <script>
+						function myFunction() {
+							console.log($('#form91').val());
+						    console.log($('#form92').val());
+						}
+						</script>
+
 						</form>
 				</div>
 				<!-- Collapsible content -->
