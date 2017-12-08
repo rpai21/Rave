@@ -1,4 +1,5 @@
 let uid;
+let name;
 $(document).ready(() =>{
 	
 
@@ -28,13 +29,15 @@ $(document).ready(() =>{
 		});
 	});
 	$.get("/myId", (data)=>{
-		uid = data;
+		uid = data.id;
+		name = data.name;
 		console.log(uid);
 		$.get( "/party/getParties", function( data ) {
 		  	for(let i = 0; i < data.length; i++){
 		  		appendParty(data[i]);
 		  	}
 		});
+		$('#headerName').html(`Welcome ${data.name}!`);
 	});
 	
 	
@@ -88,11 +91,16 @@ function appendParty(obj){
 		}
 	}
 	let likebutton;
-	if(liked){
-		likebutton = `<a class="btn btn-yellow" href="/party/${obj._id}/up">Like</a>`;
+	if(going){
+		if(liked){
+			likebutton = `<a class="btn btn-yellow" href="/party/${obj._id}/up">Like</a>`;
+		}else{
+			likebutton = `<a class="btn btn-blue-grey" href="/party/${obj._id}/up">Like</a>`;
+		}
 	}else{
-		likebutton = `<a class="btn btn-blue-grey" href="/party/${obj._id}/up">Like</a>`;
+		likebutton = `<a class="btn btn-blue-grey" disabled>Like</a>`;
 	}
+	
 
 	let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -128,7 +136,7 @@ function appendParty(obj){
 
 			                <p>${obj.description}</p>
 
-			                <p><small>by <strong>${obj.owner.username}</strong></small></p>
+			                <p><small>by <strong>${name}</strong></small></p>
 
 							<p><strong>${obj.count}</strong> People Going</p>
 							<p><strong>${obj.upCount}</strong> Likes</p>

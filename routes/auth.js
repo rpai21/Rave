@@ -19,7 +19,7 @@ userController.authenticated = (req, res, next) => {
 
 // Post registration
 userController.signup = (req, res) => {
-  User.register(new User({ username : req.body.username}), req.body.password, function(err, user) {
+  User.register(new User({ username : req.body.username, name: req.body.name}), req.body.password, function(err, user) {
     if (err) {
           throw new Error('Registration error');
     }
