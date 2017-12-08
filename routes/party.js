@@ -12,6 +12,7 @@ router.get('/getParties', auth.authenticated,function(req, res) {
 	.populate('owner')
 	.populate('going')
 	.populate('up')
+	.sort({upCount: -1})
 	.exec((err, data)=>{
 		res.send(data);
 	});
@@ -43,12 +44,22 @@ router.post('/createParty', auth.authenticated, function(req, res) {
 });
 
 router.get('/:id/going', auth.authenticated, function(req, res) {
-	Party.findById(req.params.id).populate('going').exec((err, prty) =>{
+	Party
+	.findById(req.params.id)
+	.populate('going')
+	.populate('up')
+	.exec((err, prty) =>{
 		for(let i = 0; i < prty.going.length; i++){
 			console.log(req.user._id+ " === " + prty.going[i]._id);
 			if(req.user._id.equals(prty.going[i]._id)){
 				prty.going.splice(i, 1);
 				prty.count--;
+				for(let j = 0; j < prty.up.length; j++){
+					if(req.user._id.equals(prty.up[j]._id)){
+						prty.up.splice(j, 1);
+						prty.upCount--;
+					}
+				}
 				prty.save();
 				res.redirect('/');
 				return;
@@ -66,7 +77,7 @@ router.get('/:id/up', auth.authenticated, function(req, res) {
 		for(let i = 0; i < prty.going.length; i++){
 			console.log(req.user._id+ " === " + prty.going[i]._id);
 			if(req.user._id.equals(prty.going[i]._id)){
-				for(let j = 0; i < prty.up.length; j++){
+				for(let j = 0; j < prty.up.length; j++){
 					if(req.user._id.equals(prty.up[j]._id)){
 						prty.up.splice(j, 1);
 						prty.upCount--;

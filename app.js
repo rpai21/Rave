@@ -75,7 +75,7 @@ app.get('/login', (req, res)=>{
 });
 
 app.get('/myId', auth.authenticated, (req, res) => {
-	res.send(req.user._id);
+	res.send({id:req.user._id, name: req.user.name});
 });
 
 app.post('/login', auth.login);

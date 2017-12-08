@@ -45,7 +45,8 @@
             <br>
 
             <button id="loginButton" type="button" class="btn btn-primary btn-rounded">it's time</button>
-
+            <br>
+            <small id="signupButton"><a>Sign Up</a></small>
 
 
         </div>
@@ -84,6 +85,41 @@
     </div>
 </div>
 
+<div class="modal fade" id="modalSignup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-bold">Sign Up</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="email" id="signup-email" class="form-control">
+                    <label data-error="wrong" data-success="right" for="signup-email">Your username</label>
+                </div>
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="email" id="signup-name" class="form-control">
+                    <label data-error="wrong" data-success="right" for="signup-name">Your Name</label>
+                </div>
+                <br>
+                <div class="md-form">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <input type="password" id="signup-pass" class="form-control">
+                    <label data-error="wrong" data-success="right" for="signup-pass">Your password</label>
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button id="signupgo" class="btn btn-primary btn-rounded">Signup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 		<!-- /Start your project here-->
 		
@@ -102,6 +138,10 @@
 					$('#modalLoginForm').modal();
 				});
 
+				$('#signupButton').click(()=>{
+					$('#modalSignup').modal();
+				});
+
 			
 				$('#go').click(()=>{
 					console.log("click");
@@ -118,6 +158,26 @@
 	                    },
 	                  error: function(){
 	                  	toastr.error('Login failed');
+	                  }
+					});
+				});
+
+				$('#signupgo').click(()=>{
+					console.log("click");
+					$.ajax({
+					  type: "POST",
+					  url: "/signup",
+					  data: JSON.stringify({
+					  	username: $('#signup-email').val(),
+					  	name: $('#signup-name').val(),
+					  	password: $('#signup-pass').val()
+					  }),
+					  contentType: "application/json",
+					  success: function(){
+	                        window.location.href = "/";
+	                    },
+	                  error: function(){
+	                  	toastr.error('Signup failed');
 	                  }
 					});
 				});
