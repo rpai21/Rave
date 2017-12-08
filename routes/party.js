@@ -7,36 +7,40 @@ const auth = require('./auth.js');
 
 
 // define the home page route
-router.get('/getParties', function(req, res) {
+router.get('/getParties', auth.authenticated,function(req, res) {
 	Party.find({}, (err, data)=>{
-		console.log(data);
 		res.send(data);
 	});
 });
 
-/*
-	{
-		name:
-		description:
-		drinks:
-		pay:
-		date:
-		seniors:
-		drinks	
-	}
-*/
-router.post('/:id/createParty', function(req, res) {
+router.post('/createParty', auth.authenticated, function(req, res) {
 	new Party({
 		name: req.body.name,
+		owner: req.user._id,
 		description: req.body.name,
 		drinks: req.body.name,
 		pay: req.body.pay,
-		date: new Date(req.body.date)
-	}).save();
+		date: new Date(req.body.date),
+		going: [req.user._id]
+	}).save((err) => {
+		if (err) throw err;
+		res.send({message: "Success"});
+	});
 });
 
-router.get('/going', function(req, res) {
-	
+router.post('/:id/going', auth.authenticated, function(req, res) {
+	Party.findById(req.params.id, (err, prty) =>{
+		for(let i = 0; i < prty.going.length; i++){
+			if(req.user._id === prty.going[i]){
+				prty.going.splice(i, 1);
+				prty.save();
+				return;
+			}
+		}
+		prty.going.push(req.user._id);
+		prty.save();
+		res.send({message: "Success"});
+	});
 });
 
 module.exports = router;

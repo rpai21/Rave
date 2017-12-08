@@ -10,7 +10,6 @@ userController.authenticated = (req, res, next) => {
 
     // CHECK THE USER STORED IN SESSION FOR A CUSTOM VARIABLE
     // you can do this however you want with whatever variables you set up
-    console.log(req.user);
     if (req.isAuthenticated())
         return next();
 
