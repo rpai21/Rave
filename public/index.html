@@ -189,46 +189,7 @@
 
 
 		<!-- /Start your project here-->
-		<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
-		<script>
-		var config = {
-		    apiKey: "AIzaSyBRn4ZIuIuyidDier1ytrH23swIz4-djnM",
-		    authDomain: "cs-252-rave.firebaseapp.com",
-		    databaseURL: "https://cs-252-rave.firebaseio.com",
-		    projectId: "cs-252-rave",
-		    storageBucket: "cs-252-rave.appspot.com",
-		    messagingSenderId: "312765926692"
-		  };
-		firebase.initializeApp(config);
-
-		</script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		<script>
-		var provider = new firebase.auth.GoogleAuthProvider();
-		function signIn(){
-			firebase.auth().signInWithPopup(provider).then(function(result) {
-	  // This gives you a Google Access Token. You can use it to access the Google API.
-	  var token = result.credential.accessToken;
-	  // The signed-in user info.
-	  var user = result.user;
-	  // ...
-	}).catch(function(error) {
-	  // Handle Errors here.
-	  var errorCode = error.code;
-	  var errorMessage = error.message;
-	  // The email of the user's account used.
-	  var email = error.email;
-	  // The firebase.auth.AuthCredential type that was used.
-	  var credential = error.credential;
-	  // ...
-	});
-		}
-		</script>
-		<script>
-		function postForm(){
-
-		}
-		</script>
+		
 		<!-- SCRIPTS -->
 		<!-- JQuery -->
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
