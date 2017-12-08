@@ -1,3 +1,4 @@
+let uid;
 $(document).ready(() =>{
 	
 
@@ -26,12 +27,16 @@ $(document).ready(() =>{
 			}
 		});
 	});
-
-	$.get( "/party/getParties", function( data ) {
-	  	for(let i = 0; i < data.length; i++){
-	  		appendParty(data[i]);
-	  	}
+	$.get("/myId", (data)=>{
+		uid = data;
+		console.log(uid);
+		$.get( "/party/getParties", function( data ) {
+		  	for(let i = 0; i < data.length; i++){
+		  		appendParty(data[i]);
+		  	}
+		});
 	});
+	
 	
 });
 
@@ -63,8 +68,20 @@ function appendParty(obj){
                 </a>`;
 	}
 	badges += `</div>`;
-				                
-	var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+	let going = false;
+	for(let j = 0; j < obj.going.length; j++){
+		if(uid === obj.going[j]._id){
+			going = true;
+		}
+	}
+	let button;
+	if(going){
+		button = `<a class="btn btn-success" href="/party/${obj._id}/going">Going</a>`;
+	}else{
+		button = `<a class="btn btn-primary" href="/party/${obj._id}/going">RSVP</a>`;
+	}
+
+	let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 	let temp = `
 	<!--News card-->
@@ -104,8 +121,7 @@ function appendParty(obj){
 						   ${badges}
 
 			            	<br>
-			                <a class="btn btn-success">Going</a>
-			                <a class="btn btn-danger">Not Going</a>
+			                ${button}
 			            </div>
 			            <!--Grid column-->
 			        </div>

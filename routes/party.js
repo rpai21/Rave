@@ -8,7 +8,7 @@ const auth = require('./auth.js');
 
 // define the home page route
 router.get('/getParties', auth.authenticated,function(req, res) {
-	Party.find({}).populate('owner').exec((err, data)=>{
+	Party.find({}).populate('owner').populate('going').exec((err, data)=>{
 		res.send(data);
 	});
 });
@@ -33,18 +33,22 @@ router.post('/createParty', auth.authenticated, function(req, res) {
 	});
 });
 
-router.post('/:id/going', auth.authenticated, function(req, res) {
-	Party.findById(req.params.id, (err, prty) =>{
+router.get('/:id/going', auth.authenticated, function(req, res) {
+	Party.findById(req.params.id).populate('going').exec((err, prty) =>{
 		for(let i = 0; i < prty.going.length; i++){
-			if(req.user._id === prty.going[i]){
+			console.log(req.user._id+ " === " + prty.going[i]._id);
+			if(req.user._id.equals(prty.going[i]._id)){
 				prty.going.splice(i, 1);
+				prty.count--;
 				prty.save();
+				res.redirect('/');
 				return;
 			}
 		}
 		prty.going.push(req.user._id);
+		prty.count++;
 		prty.save();
-		res.send({message: "Success"});
+		res.redirect('/');
 	});
 });
 

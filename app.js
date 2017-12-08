@@ -74,6 +74,10 @@ app.get('/login', (req, res)=>{
 	res.sendFile(path.join(__dirname, 'public/main.html'));
 });
 
+app.get('/myId', auth.authenticated, (req, res) => {
+	res.send(req.user._id);
+});
+
 app.post('/login', auth.login);
 app.post('/signup', auth.signup);
 app.get('/logout', auth.logout);
