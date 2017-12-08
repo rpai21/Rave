@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Material Design Bootstrap</title>
+		<title>Find Your Rave!</title>
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- Bootstrap core CSS -->
@@ -14,6 +14,7 @@
 		<link href="css/mdb.min.css" rel="stylesheet">
 		<!-- Your custom styles (optional) -->
 		<link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -23,7 +24,7 @@
 		<nav class="navbar navbar-expand-lg navbar-dark indigo">
 
 				<!-- Navbar brand -->
-				<a class="navbar-brand" href="#">RAVE</a>
+				<a class="navbar-brand" href="index.html">RAVE</a>
 
 				<!-- Collapse button -->
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -34,65 +35,200 @@
 
 						<!-- Links -->
 						<ul class="navbar-nav mr-auto">
-								<li class="nav-item active">
-										<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+								<li class="nav-item">
+										<a class="nav-link" href="post-form.html">Post Party<span class="sr-only">(current)</span></a>
 								</li>
 								<li class="nav-item">
-										<a class="nav-link" href="#">Features</a>
+										<a class="nav-link" href="index.html">Find Party</a>
 								</li>
-								<li class="nav-item">
+								<!-- <li class="nav-item">
 										<a class="nav-link" href="#">Pricing</a>
-								</li>
+								</li> -->
 
 								<!-- Dropdown -->
-								<li class="nav-item dropdown">
+<!-- 								<li class="nav-item dropdown">
 										<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
 										<div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
 												<a class="dropdown-item" href="#">Action</a>
 												<a class="dropdown-item" href="#">Another action</a>
 												<a class="dropdown-item" href="#">Something else here</a>
 										</div>
-								</li>
+								</li> -->
 
 						</ul>
 						<!-- Links -->
 
 						<!-- Search form -->
-						<form class="form-inline">
+<!-- 						<form class="form-inline">
 								<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+						</form> -->
+
+						<form class="form-inline">
+
+					    <div class="md-form">
+					        <i class="fa fa-envelope prefix"></i>
+					        <input type="email" id="form91" class="form-control validate">
+					        <label for="form91" data-error="wrong" data-success="right">Type your email</label>
+					    </div>
+
+					    <div class="md-form">
+					        <i class="fa fa-lock prefix"></i>
+					        <input type="password" id="form92" class="form-control validate">
+					        <label for="form92" data-error="wrong" data-success="right">Type your password</label>
+					    </div>
+
+					    <div class="md-form form-group">
+					        <a class="btn btn-primary btn-lg" id = "test" onclick="myFunction()">Login</a>
+					    </div>
+
+					    <script>
+						function myFunction() {
+							console.log($('#form91').val());
+						    console.log($('#form92').val());
+						}
+						</script>
+
 						</form>
 				</div>
 				<!-- Collapsible content -->
 
 		</nav>
 		<!--/.Navbar-->
+
+
+
 		<div class="container">
 			<br>
 			<!-- Search form -->
 				<form class="form-inline">
 					<input class="form-control w-100" type="text" placeholder="Search" aria-label="Search">
 				</form>
-				
-				<button type="button" class="btn btn-primary">Search</button>
-				
-			<br>
-			<br>  
-			<!--Panel-->
-			<div class="card card-body">
-			    <h4 class="card-title">506 Banger</h4>
-			    <p class="card-text">This gonna be a dank af party, bring ur bitches.</p>
-			    <div class="flex-row">
-			        <a class="card-link">View More</a>
-			        <a class="card-link">Like</a>
-			    </div>
-			</div>
-			<!--/.Panel-->
-                
-		</div>
-		
-								
-		<!-- /Start your project here-->
 
+				<button type="button" class="btn btn-primary">Search</button>
+
+
+		<br></br>
+
+					<!--News card-->
+		<div class="card border-primary mb-3 text-center hoverable">
+		    <div class="card-body">
+		        <!--Grid row-->
+		        <div class="row">
+
+		            <!--Grid column-->
+		            <div class="col-md-4 offset-md-1 mx-3 my-3">
+		                <!--Featured image-->
+		                <div class="view overlay hm-white-slight">
+		                    <blockquote class="imgur-embed-pub" lang="en" data-id="a/9MPIu"><a href="//imgur.com/9MPIu"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+		                    <a>
+		                        <div class="mask"></div>
+		                    </a>
+		                </div>
+		            </div>
+		            <!--Grid column-->
+
+		            <!--Grid column-->
+		            <div class="col-md-7 text-left ml-3 mt-3">
+
+
+		                <!--Excerpt-->
+
+
+		                <h4 class="mb-4"><strong>Beta Chi Banger</strong></h4>
+		                <p>Back To Scool Party! Come back to school and kick it off with a bang. Join us this Spring 2018 Syllabooz week. </p>
+
+		                <p>by <a><strong>Sanjit Sama</strong></a>, 1/15/18</p>
+
+					   <div class="row">
+		                &nbsp;
+		                &nbsp;
+		                &nbsp;
+		                <a href="" class="green-text">
+		                    <h6 class="font-bold pb-1"><i class="fa fa-money"></i> Cost</h6>
+		                </a>
+		                &nbsp;
+		                &nbsp;
+		                &nbsp;
+		                <a href="" class="green-text">
+		                    <h6 class="font-bold pb-1"><i class="fa fa-glass"></i> Provided</h6>
+		                </a>
+		                &nbsp;
+		                &nbsp;
+		                &nbsp;
+		                <a href="" class="green-text">
+		                    <h6 class="font-bold pb-1"><i class="fa fa-calendar"></i> Date</h6>
+		                </a>
+		                &nbsp;
+		                &nbsp;
+		                &nbsp;
+		                <a href="" class="green-text">
+		                    <h6 class="font-bold pb-1"><i class="fa fa-users"></i> Seniors Only</h6>
+		                </a>
+		                &nbsp;
+		                &nbsp;
+		                &nbsp;
+		            	</div>
+
+		            	<br>
+		            	</br>
+		                <a class="btn btn-success">Going</a>
+
+
+
+		            </div>
+		            <!--Grid column-->
+		        </div>
+		        <!--Grid row-->
+		    </div>
+		</div>
+		<!--News card-->
+
+
+
+		</div>
+
+
+		<!-- /Start your project here-->
+		<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+		<script>
+		var config = {
+		    apiKey: "AIzaSyBRn4ZIuIuyidDier1ytrH23swIz4-djnM",
+		    authDomain: "cs-252-rave.firebaseapp.com",
+		    databaseURL: "https://cs-252-rave.firebaseio.com",
+		    projectId: "cs-252-rave",
+		    storageBucket: "cs-252-rave.appspot.com",
+		    messagingSenderId: "312765926692"
+		  };
+		firebase.initializeApp(config);
+
+		</script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script>
+		var provider = new firebase.auth.GoogleAuthProvider();
+		function signIn(){
+			firebase.auth().signInWithPopup(provider).then(function(result) {
+	  // This gives you a Google Access Token. You can use it to access the Google API.
+	  var token = result.credential.accessToken;
+	  // The signed-in user info.
+	  var user = result.user;
+	  // ...
+	}).catch(function(error) {
+	  // Handle Errors here.
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+	  // The email of the user's account used.
+	  var email = error.email;
+	  // The firebase.auth.AuthCredential type that was used.
+	  var credential = error.credential;
+	  // ...
+	});
+		}
+		</script>
+		<script>
+		function postForm(){
+
+		}
+		</script>
 		<!-- SCRIPTS -->
 		<!-- JQuery -->
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
