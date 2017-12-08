@@ -15,6 +15,7 @@ let party = new Schema({
   alc: Boolean,
   age: Boolean,
   count: Number,
+  address: String,
   up: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   upCount: Number,
   down: [{ type: Schema.Types.ObjectId, ref: 'User' }],

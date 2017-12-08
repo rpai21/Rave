@@ -30,6 +30,7 @@ router.post('/createParty', auth.authenticated, function(req, res) {
 		startTime: req.body.startTime,
 		endTime: req.body.endTime,
 		going: [req.user._id],
+		address: req.body.address,
 		up: [],
 		upCount: 0,
 		down: [],

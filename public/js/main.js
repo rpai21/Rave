@@ -6,6 +6,7 @@ $(document).ready(() =>{
 		let obj = {};
 		obj.name = $('#form3').val();
 		obj.description = $('#form8').val();
+		obj.address = $('#form215').val();
 		obj.startDate = new Date($('#date1').val());
 		obj.startTime = $('#time1').val();
 		obj.endDate = new Date($('#date2').val());
@@ -127,6 +128,8 @@ function appendParty(obj){
 			                <small><strong>Ends:</strong> ${new Date(obj.endDate).toLocaleString('en-US', options)} ${obj.endTime}</small></p>
 
 			                <p>${obj.description}</p>
+
+			                 <small><strong>Address:</strong> ${obj.address}</small>
 
 			                <p><small>by <strong>${obj.owner.username}</strong></small></p>
 
