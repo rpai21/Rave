@@ -12,6 +12,7 @@ router.get('/getParties', auth.authenticated,function(req, res) {
 	.populate('owner')
 	.populate('going')
 	.populate('up')
+	.sort({upCount: -1})
 	.exec((err, data)=>{
 		res.send(data);
 	});

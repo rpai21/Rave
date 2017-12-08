@@ -136,7 +136,7 @@ function appendParty(obj){
 
 			                <p>${obj.description}</p>
 
-			                <p><small>by <strong>${name}</strong></small></p>
+			                <p><small>by <strong>${obj.owner.name}</strong></small></p>
 
 							<p><strong>${obj.count}</strong> People Going</p>
 							<p><strong>${obj.upCount}</strong> Likes</p>
