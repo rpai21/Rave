@@ -12,6 +12,28 @@ const party = require('./routes/party');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+
+
+
+const passport = require('passport')
+  , LocalStrategy = require('passport-local').Strategy;
+
+app.use(require('express-session')({
+    secret: 'SEEECREETT',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+const User = require('./models/user');
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+const auth = require('./routes/auth');
+console.log(auth);
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -44,6 +66,17 @@ Parties {
 	engagement:
 }
 */
+app.get('/',  auth.authenticated, (req, res)=>{
+	res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+app.get('/login', (req, res)=>{
+	res.send("Please go login");
+});
+
+app.post('/login', auth.login);
+app.post('/signup', auth.signup);
+app.get('/logout', auth.logout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -51,6 +84,8 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+
 
 
 

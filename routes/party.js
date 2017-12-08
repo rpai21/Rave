@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Party = require('../model/party.js');
+const Party = require('../models/party.js');
+const auth = require('./auth.js');
+
+
+
 
 // define the home page route
 router.get('/getParties', function(req, res) {

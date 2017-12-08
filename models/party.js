@@ -8,7 +8,6 @@ let party = new Schema({
   drinks: Boolean,
   pay: Boolean,
   date: Date,
-  seniors: Boolean,
   drinks: Boolean
 });
 let partyModel = mongoose.model('Party', party);
